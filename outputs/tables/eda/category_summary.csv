@@ -1,0 +1,16 @@
+complaint_category,complaint_count,percentage,cumulative_percentage
+Street Condition,30006,30.01,30.01
+Traffic Signal Condition,18896,18.9,48.91
+Street Light Condition,14485,14.49,63.4
+Sewer,12000,12.0,75.4
+Sidewalk Condition,10772,10.77,86.17
+Root/Sewer/Sidewalk Condition,4404,4.4,90.57
+Curb Condition,3097,3.1,93.67
+Street Sign - Damaged,2188,2.19,95.86
+Street Sign - Dangling,1544,1.54,97.4
+Street Sign - Missing,1521,1.52,98.92
+Water Leak,449,0.45,99.37
+Sewer Maintenance,428,0.43,99.8
+Bridge Condition,123,0.12,99.92
+Water Maintenance,67,0.07,99.99
+Water Drainage,20,0.02,100.01

@@ -1,0 +1,7 @@
+borough,dominant_category,complaint_count,percentage
+BRONX,Street Condition,3007,23.960159362549803
+BROOKLYN,Street Condition,7829,25.69581199947486
+MANHATTAN,Street Condition,5352,34.400308522946396
+QUEENS,Street Condition,10790,32.89132754153331
+STATEN ISLAND,Street Condition,2964,35.45454545454545
+Unspecified,Traffic Signal Condition,97,37.45173745173745

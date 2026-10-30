@@ -1,0 +1,7 @@
+feature,reason
+area_id,Geographic identifier
+borough,Geographic identifier
+incident_zip,Geographic identifier
+latitude,Geographic coordinates; assess separately
+longitude,Geographic coordinates; assess separately
+category_share_sum,"Validation column, not a clustering feature"

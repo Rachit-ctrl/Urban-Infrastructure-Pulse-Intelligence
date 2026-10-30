@@ -1,0 +1,8 @@
+complaint_type,persistent_locations,average_complaints,median_duration_days,maximum_complaints
+Traffic Signal Condition,690,7.078260869565217,678.5,28
+Street Condition,174,6.206896551724138,602.0,15
+Street Light Condition,120,8.816666666666666,745.5,80
+Sidewalk Condition,23,6.826086956521739,605.0,11
+Sewer,17,5.9411764705882355,606.0,10
+Curb Condition,3,6.333333333333333,195.0,9
+Street Sign - Missing,3,20.0,123.0,42

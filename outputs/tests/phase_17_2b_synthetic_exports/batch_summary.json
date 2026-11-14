@@ -1,0 +1,26 @@
+{
+  "schema_version": "bulk_export_v1",
+  "input_type": "synthetic_test_batch",
+  "historical_reference_period": "2023-2025",
+  "total_complaints": 500,
+  "status_counts": {
+    "backend_error": 0,
+    "geographic_review_required": 100,
+    "input_rejected": 5,
+    "processed": 395
+  },
+  "review_queue_rows": 120,
+  "zip_review_rows": 20,
+  "rejected_input_rows": 5,
+  "backend_error_rows": 0,
+  "historical_hotspot_associations": 395,
+  "historical_kmeans_profiles_displayed": 175,
+  "backend_evaluations": 5,
+  "notes": [
+    "This batch contains synthetic test records.",
+    "Review queues are not safety rankings.",
+    "ZIP review can coexist with processed status.",
+    "Historical clusters are not retrained.",
+    "No new hotspots are discovered in this phase."
+  ]
+}

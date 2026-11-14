@@ -1,13 +1,14 @@
 EDA — DATA QUALITY FINDINGS
 ==================================================
 
-1. The cleaned dataset contains 100,000 complaint records.
-2. The dataset contains 41 columns.
-3. All complaint identifiers are unique.
-4. No missing complaint identifiers were found.
-5. No missing complaint creation dates were found.
-6. Due date is completely empty and provides no analytical value.
-7. Latitude and longitude are missing in 10.76% of records.
-8. Resolution duration is missing in 3.47% of records.
-9. The dataset contains 15 complaint categories.
-10. Geographic analysis should use records with valid coordinate pairs.
+1. The cleaned dataset contains 685,284 complaint records and 53 columns.
+2. There are 15 complaint categories.
+3. Duplicate complaint IDs: 0.
+4. Missing complaint IDs: 0.
+5. Missing creation dates: 0.
+6. Missing coordinate pairs: 74,000 (10.80%).
+7. Unavailable resolution durations: 23,166 (3.38%).
+8. Backward closing timestamps flagged: 5,623.
+9. Missing or invalid coordinates must be excluded from spatial plots/DBSCAN.
+10. Complaint closure duration is not necessarily physical repair duration.
+11. Missing due dates: 685,284 (100.00%).

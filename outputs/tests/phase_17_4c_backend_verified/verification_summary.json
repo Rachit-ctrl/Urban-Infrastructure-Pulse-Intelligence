@@ -1,0 +1,14 @@
+{
+  "schema_version": "phase_17_4c_verification_v1",
+  "dataset": "synthetic_500_diverse",
+  "input_records": 500,
+  "verified_records": 500,
+  "verified_areas": 20,
+  "boroughs": 5,
+  "backend_evaluations": 500,
+  "historical_hotspot_associations": 137,
+  "tests_passed": 21,
+  "tests_total": 21,
+  "historical_reference_period": "2023-2025",
+  "note": "Synthetic data only. Historical model lookups are unchanged. No new clustering model has been trained."
+}

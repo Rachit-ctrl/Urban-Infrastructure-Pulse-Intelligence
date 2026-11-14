@@ -1,7 +1,3 @@
-feature,reason
-area_id,Geographic identifier
-borough,Geographic identifier
-incident_zip,Geographic identifier
-latitude,Geographic coordinates; assess separately
-longitude,Geographic coordinates; assess separately
-category_share_sum,"Validation column, not a clustering feature"
+version https://git-lfs.github.com/spec/v1
+oid sha256:0d894fbf101e26bfd53c1fd4cab7962096e766662fa9272c23fd1103a7376322
+size 285

@@ -1,0 +1,11 @@
+{
+    "records": 685284,
+    "columns": 53,
+    "complaint_types": 15,
+    "duplicate_unique_keys": 0,
+    "invalid_dates": 0,
+    "outside_study_dates": 0,
+    "earliest_date": "2023-01-01 00:00:57",
+    "latest_date": "2025-12-31 23:57:00",
+    "master_file_sha256": "8635dd08754013e26d154208225de0eca386564df6a2df127bd500eacd4b0d08"
+}

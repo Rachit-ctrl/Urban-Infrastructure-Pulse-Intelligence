@@ -1,7 +1,3 @@
-borough,total_records,records_with_coordinates,coordinate_percentage
-BRONX,12550,11153,88.87
-BROOKLYN,30468,28110,92.26
-MANHATTAN,15558,13990,89.92
-QUEENS,32805,28431,86.67
-STATEN ISLAND,8360,7516,89.9
-Unspecified,259,44,16.99
+version https://git-lfs.github.com/spec/v1
+oid sha256:8638d4b9b046cac796b34966b5a8076c711f2af87b86852479489dacf767cea5
+size 244

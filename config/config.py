@@ -20,7 +20,7 @@ REFERENCE_DATA_DIR = DATA_DIR / "reference"
 
 MASTER_DATA_FILE = (
     PROCESSED_DATA_DIR
-    / "nyc311_infrastructure_100k_cleaned.csv"
+    /"nyc311_infrastructure_cleaned.csv"
 )
 
 QUALITY_REPORT_FILE = (
@@ -60,7 +60,7 @@ DBSCAN_DIR = MODELS_DIR / "dbscan"
 
 PROJECT_NAME = "Urban Infrastructure Pulse Intelligence"
 
-EXPECTED_RECORDS = 100_000
+EXPECTED_RECORDS = 685_284
 
 STUDY_START_DATE = "2023-01-01"
 STUDY_END_DATE = "2025-12-31"

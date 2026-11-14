@@ -1,7 +1,3 @@
-borough,complaint_count,percentage
-QUEENS,32805,32.8
-BROOKLYN,30468,30.47
-MANHATTAN,15558,15.56
-BRONX,12550,12.55
-STATEN ISLAND,8360,8.36
-Unspecified,259,0.26
+version https://git-lfs.github.com/spec/v1
+oid sha256:98170421722aeec43664f7aa4633446d18309098f0744bd820c6125e24008f6e
+size 172

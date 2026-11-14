@@ -1,0 +1,496 @@
+"""New-batch area similarity using complaint-category shares.
+
+This module never modifies or retrains historical
+K-Means or DBSCAN artifacts.
+
+A cluster identifies similar reporting composition,
+not defect severity or operational priority.
+"""
+
+import numpy as np
+import pandas as pd
+
+from sklearn.cluster import KMeans
+from sklearn.metrics import silhouette_score
+
+
+REQUIRED_COLUMNS = {
+    "source_row",
+    "complaint_id",
+    "borough",
+    "incident_zip",
+    "complaint_category",
+    "processing_status",
+    "zip_validation_status"
+}
+
+VALID_BOROUGHS = {
+    "BRONX",
+    "BROOKLYN",
+    "MANHATTAN",
+    "QUEENS",
+    "STATEN ISLAND"
+}
+
+
+def analyze_new_batch_areas(
+    records,
+    supported_categories,
+    k=3,
+    min_area_size=20,
+    random_state=18
+):
+    """Cluster geographic areas by new complaint shares.
+
+    Input must come from the geographic batch
+    processor. Historical labels are context only.
+    """
+
+    if not isinstance(records, pd.DataFrame):
+        raise TypeError("Expected a DataFrame.")
+
+    missing = REQUIRED_COLUMNS - set(records.columns)
+
+    if missing:
+        raise ValueError(
+            f"Missing columns: {sorted(missing)}"
+        )
+
+    if records["source_row"].duplicated().any():
+        raise ValueError("Duplicate source rows.")
+
+    if not isinstance(k, int) or k < 2:
+        raise ValueError("k must be an integer >= 2.")
+
+    if (
+        not isinstance(min_area_size, int)
+        or min_area_size < 1
+    ):
+        raise ValueError(
+            "Minimum area size must be positive."
+        )
+
+    categories = sorted({
+        str(value).strip().upper()
+        for value in supported_categories
+        if pd.notna(value)
+        and str(value).strip()
+    })
+
+    if not categories:
+        raise ValueError("No supported categories.")
+
+    # ----------------------------------------------
+    # 2. Normalize and screen geographic evidence
+    # ----------------------------------------------
+
+    work = records.copy().reset_index(drop=True)
+
+    text_columns = [
+        "borough",
+        "incident_zip",
+        "complaint_category",
+        "processing_status",
+        "zip_validation_status"
+    ]
+
+    for column in text_columns:
+        work[column] = (
+            work[column]
+            .fillna("")
+            .astype(str)
+            .str.strip()
+        )
+
+    work["borough"] = work[
+        "borough"
+    ].str.upper()
+
+    work["complaint_category"] = work[
+        "complaint_category"
+    ].str.upper()
+
+    work["area_id"] = pd.NA
+    work["eligibility_reason"] = "eligible"
+
+    # Preserve every excluded row with a reason.
+    tests = [
+        (
+            work["processing_status"].ne("processed"),
+            "not_processed"
+        ),
+        (
+            work["zip_validation_status"].ne(
+                "zcta_consistent"
+            ),
+            "zip_not_verified"
+        ),
+        (
+            ~work["borough"].isin(VALID_BOROUGHS),
+            "invalid_borough"
+        ),
+        (
+            ~work["incident_zip"].str.fullmatch(
+                r"\d{5}"
+            ),
+            "invalid_zip"
+        ),
+        (
+            ~work["complaint_category"].isin(
+                categories
+            ),
+            "unsupported_category"
+        )
+    ]
+
+    for bad, reason in tests:
+        work.loc[
+            bad
+            & work["eligibility_reason"].eq(
+                "eligible"
+            ),
+            "eligibility_reason"
+        ] = reason
+
+    valid = work[
+        "eligibility_reason"
+    ].eq("eligible")
+
+    work.loc[valid, "area_id"] = (
+        work.loc[valid, "borough"]
+        + "_"
+        + work.loc[valid, "incident_zip"]
+    )
+
+    included = work.loc[valid].copy()
+    excluded = work.loc[~valid].copy()
+
+    # ----------------------------------------------
+    # 3. Create category-count and share matrices
+    # ----------------------------------------------
+
+    if included.empty:
+
+        counts = pd.DataFrame(
+            index=pd.Index([], name="area_id"),
+            columns=categories
+        ).fillna(0).astype(int)
+
+    else:
+
+        counts = pd.crosstab(
+            included["area_id"],
+            included["complaint_category"]
+        ).reindex(
+            columns=categories,
+            fill_value=0
+        )
+
+        counts.index.name = "area_id"
+
+    area_sizes = counts.sum(axis=1).astype(int)
+
+    enough = area_sizes.ge(min_area_size)
+
+    # Mark records from areas below the minimum
+    # sample threshold without discarding them.
+    small_area_mask = (
+        valid
+        & work["area_id"].isin(
+            area_sizes.index[~enough]
+        )
+    )
+
+    work.loc[
+        small_area_mask,
+        "eligibility_reason"
+    ] = "below_minimum_area_size"
+
+    features = (
+        counts.loc[enough]
+        .div(
+            area_sizes.loc[enough],
+            axis=0
+        )
+        .mul(100)
+    )
+
+    area_summary = pd.DataFrame({
+        "area_id": area_sizes.index,
+        "incoming_complaints":
+            area_sizes.to_numpy(),
+        "meets_minimum":
+            enough.to_numpy()
+    })
+
+    # ----------------------------------------------
+    # 4. Add optional historical K-Means context
+    # ----------------------------------------------
+
+    area_summary[
+        "historical_kmeans_cluster"
+    ] = pd.NA
+
+    area_summary[
+        "historical_reporting_profile"
+    ] = pd.NA
+
+    historical_columns = {
+        "kmeans_area_id",
+        "kmeans_cluster_id",
+        "kmeans_reporting_profile",
+        "kmeans_display_allowed"
+    }
+
+    if historical_columns.issubset(
+        included.columns
+    ):
+
+        display_allowed = (
+            included["kmeans_display_allowed"]
+            .fillna(False)
+            .astype(str)
+            .str.strip()
+            .str.lower()
+            .eq("true")
+        )
+
+        matching_area = (
+            included["kmeans_area_id"]
+            .fillna("")
+            .astype(str)
+            .str.strip()
+            .eq(included["area_id"])
+        )
+
+        history = included.loc[
+            display_allowed & matching_area
+        ].copy()
+
+        if not history.empty:
+
+            consistency = (
+                history.groupby("area_id")
+                .agg(
+                    cluster_variants=(
+                        "kmeans_cluster_id",
+                        "nunique"
+                    ),
+                    profile_variants=(
+                        "kmeans_reporting_profile",
+                        "nunique"
+                    )
+                )
+            )
+
+            if (consistency > 1).any().any():
+                raise ValueError(
+                    "Conflicting historical area profiles."
+                )
+
+            lookup = (
+                history.drop_duplicates("area_id")
+                .set_index("area_id")
+            )
+
+            area_summary[
+                "historical_kmeans_cluster"
+            ] = area_summary["area_id"].map(
+                lookup["kmeans_cluster_id"]
+            )
+
+            area_summary[
+                "historical_reporting_profile"
+            ] = area_summary["area_id"].map(
+                lookup["kmeans_reporting_profile"]
+            )
+
+    # ----------------------------------------------
+    # 5. Prepare traceable output and safeguards
+    # ----------------------------------------------
+
+    output = {
+        "status": None,
+        "reason": None,
+        "record_eligibility": work[[
+            "source_row",
+            "complaint_id",
+            "area_id",
+            "eligibility_reason"
+        ]].copy(),
+        "area_summary": area_summary,
+        "area_category_counts": counts,
+        "area_category_percentages": features,
+        "cluster_profiles": pd.DataFrame(),
+        "model": None,
+        "silhouette": None,
+        "stats": {
+            "total_records": len(work),
+            "eligible_records": len(included),
+            "excluded_records": len(excluded),
+            "eligible_areas": int(enough.sum()),
+            "small_sample_areas": int(
+                (~enough).sum()
+            ),
+            "records_in_eligible_areas": int(
+                area_sizes.loc[enough].sum()
+            ),
+            "records_in_small_areas": int(
+                area_sizes.loc[~enough].sum()
+            )
+        }
+    }
+
+    if len(features) < k:
+
+        output["status"] = "insufficient_areas"
+
+        output["reason"] = (
+            f"Need at least {k} areas with "
+            f"{min_area_size}+ complaints."
+        )
+
+        return output
+
+
+    # Silhouette is undefined when the number of
+    # qualifying areas equals the number of clusters.
+    if len(features) == k:
+
+        output["status"] = (
+            "insufficient_areas_for_validation"
+        )
+
+        output["reason"] = (
+            f"Need at least {k + 1} qualifying "
+            f"areas to evaluate K={k} safely."
+        )
+
+        return output
+    unique_patterns = np.unique(
+        features.to_numpy(dtype=float),
+        axis=0
+    ).shape[0]
+
+    if unique_patterns < k:
+
+        output["status"] = (
+            "insufficient_distinct_patterns"
+        )
+
+        output["reason"] = (
+            f"Need at least {k} different "
+            f"area category-share patterns."
+        )
+
+        return output
+
+    # ----------------------------------------------
+    # 6. Fit only the NEW area-category features
+    # ----------------------------------------------
+
+    model = KMeans(
+        n_clusters=k,
+        random_state=random_state,
+        n_init=20
+    )
+
+    labels = model.fit_predict(features)
+
+    if len(np.unique(labels)) != k:
+
+        output["status"] = (
+            "insufficient_distinct_patterns"
+        )
+
+        output["reason"] = (
+            "K-Means did not produce the "
+            "requested number of clusters."
+        )
+
+        return output
+
+    centers = pd.DataFrame(
+        model.cluster_centers_,
+        columns=categories
+    )
+
+    centers.index.name = "new_batch_cluster"
+
+    dominant = centers.idxmax(axis=1)
+
+    readable_names = {
+        "STREET CONDITION":
+            "Road-heavy reporting",
+        "SEWER":
+            "Sewer-heavy reporting",
+        "STREET LIGHT CONDITION":
+            "Lighting/signal-heavy reporting"
+    }
+
+    descriptions = dominant.map(
+        lambda category: readable_names.get(
+            category,
+            f"{category.title()}-dominant reporting"
+        )
+    )
+
+    cluster_profiles = pd.DataFrame({
+        "new_batch_cluster": range(k),
+        "description": descriptions.to_numpy(),
+        "dominant_category": dominant.to_numpy(),
+        "areas": (
+            pd.Series(labels)
+            .value_counts()
+            .reindex(range(k), fill_value=0)
+            .to_numpy()
+        )
+    })
+
+    for category in [
+        "STREET CONDITION",
+        "SEWER",
+        "STREET LIGHT CONDITION"
+    ]:
+        if category in centers:
+
+            cluster_profiles[
+                category + "_pct"
+            ] = (
+                centers[category]
+                .round(2)
+                .to_numpy()
+            )
+
+    assignments = pd.Series(
+        labels,
+        index=features.index,
+        name="new_batch_cluster"
+    )
+
+    area_summary["new_batch_cluster"] = (
+        pd.to_numeric(
+            area_summary["area_id"].map(
+                assignments
+            ),
+            errors="coerce"
+        ).astype("Int64")
+    )
+
+    area_summary[
+        "new_batch_description"
+    ] = area_summary[
+        "new_batch_cluster"
+    ].map(descriptions)
+
+    output.update({
+        "status": "clustered",
+        "reason": None,
+        "model": model,
+        "cluster_profiles": cluster_profiles,
+        "silhouette": float(
+            silhouette_score(features, labels)
+        )
+    })
+
+    return output

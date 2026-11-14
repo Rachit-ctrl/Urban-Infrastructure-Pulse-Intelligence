@@ -1,6 +1,3 @@
-Metric,Count,Percentage
-Total records,100000,100.0
-Complete coordinate pairs,89244,89.24
-Missing coordinate pairs,10756,10.76
-Coordinates within broad NYC bounds,89244,89.24
-Coordinates outside broad NYC bounds,0,0.0
+version https://git-lfs.github.com/spec/v1
+oid sha256:20e7e5d725d535a2a4145e3e0158c240623ca924c41c87c7d6dac60a86563650
+size 222

@@ -1,0 +1,466 @@
+{
+  "type": "FeatureCollection",
+  "name": "new_batch_spatial_candidate_locations",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "NB-00-000",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.9134021,
+          40.85308031
+        ]
+      },
+      "properties": {
+        "candidate_id": "NB-00-000",
+        "complaint_category": "SEWER",
+        "incoming_complaints": 15,
+        "distinct_locations": 15,
+        "historical_relationship": "mixed_or_uncertain_historical_associations",
+        "complaints_in_anomaly_candidate_groups": 15,
+        "synthetic_data": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "NB-00-003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.99136336,
+          40.73110359
+        ]
+      },
+      "properties": {
+        "candidate_id": "NB-00-003",
+        "complaint_category": "SEWER",
+        "incoming_complaints": 15,
+        "distinct_locations": 15,
+        "historical_relationship": "mixed_or_uncertain_historical_associations",
+        "complaints_in_anomaly_candidate_groups": 15,
+        "synthetic_data": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "NB-00-004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.71380612,
+          40.75582044
+        ]
+      },
+      "properties": {
+        "candidate_id": "NB-00-004",
+        "complaint_category": "SEWER",
+        "incoming_complaints": 15,
+        "distinct_locations": 15,
+        "historical_relationship": "entirely_outside_historical_associations",
+        "complaints_in_anomaly_candidate_groups": 0,
+        "synthetic_data": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "NB-03-010",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.09620717,
+          40.62477947
+        ]
+      },
+      "properties": {
+        "candidate_id": "NB-03-010",
+        "complaint_category": "STREET CONDITION",
+        "incoming_complaints": 14,
+        "distinct_locations": 14,
+        "historical_relationship": "entirely_outside_historical_associations",
+        "complaints_in_anomaly_candidate_groups": 14,
+        "synthetic_data": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "NB-03-004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.93415352,
+          40.64962663
+        ]
+      },
+      "properties": {
+        "candidate_id": "NB-03-004",
+        "complaint_category": "STREET CONDITION",
+        "incoming_complaints": 13,
+        "distinct_locations": 13,
+        "historical_relationship": "entirely_outside_historical_associations",
+        "complaints_in_anomaly_candidate_groups": 0,
+        "synthetic_data": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "NB-03-005",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.00447091,
+          40.7519771
+        ]
+      },
+      "properties": {
+        "candidate_id": "NB-03-005",
+        "complaint_category": "STREET CONDITION",
+        "incoming_complaints": 13,
+        "distinct_locations": 13,
+        "historical_relationship": "mixed_or_uncertain_historical_associations",
+        "complaints_in_anomaly_candidate_groups": 13,
+        "synthetic_data": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "NB-03-006",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98505846,
+          40.71737817
+        ]
+      },
+      "properties": {
+        "candidate_id": "NB-03-006",
+        "complaint_category": "STREET CONDITION",
+        "incoming_complaints": 13,
+        "distinct_locations": 13,
+        "historical_relationship": "entirely_associated_with_historical_clusters",
+        "complaints_in_anomaly_candidate_groups": 13,
+        "synthetic_data": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "NB-03-003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98965885,
+          40.69356195
+        ]
+      },
+      "properties": {
+        "candidate_id": "NB-03-003",
+        "complaint_category": "STREET CONDITION",
+        "incoming_complaints": 12,
+        "distinct_locations": 12,
+        "historical_relationship": "mixed_or_uncertain_historical_associations",
+        "complaints_in_anomaly_candidate_groups": 12,
+        "synthetic_data": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "NB-04-002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.01690497,
+          40.68875586
+        ]
+      },
+      "properties": {
+        "candidate_id": "NB-04-002",
+        "complaint_category": "STREET LIGHT CONDITION",
+        "incoming_complaints": 12,
+        "distinct_locations": 12,
+        "historical_relationship": "entirely_outside_historical_associations",
+        "complaints_in_anomaly_candidate_groups": 0,
+        "synthetic_data": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "NB-00-001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.98524119,
+          40.62092408
+        ]
+      },
+      "properties": {
+        "candidate_id": "NB-00-001",
+        "complaint_category": "SEWER",
+        "incoming_complaints": 11,
+        "distinct_locations": 11,
+        "historical_relationship": "mixed_or_uncertain_historical_associations",
+        "complaints_in_anomaly_candidate_groups": 11,
+        "synthetic_data": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "NB-03-011",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.1365786,
+          40.62943019
+        ]
+      },
+      "properties": {
+        "candidate_id": "NB-03-011",
+        "complaint_category": "STREET CONDITION",
+        "incoming_complaints": 11,
+        "distinct_locations": 11,
+        "historical_relationship": "entirely_outside_historical_associations",
+        "complaints_in_anomaly_candidate_groups": 11,
+        "synthetic_data": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "NB-04-003",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.70250832,
+          40.74726855
+        ]
+      },
+      "properties": {
+        "candidate_id": "NB-04-003",
+        "complaint_category": "STREET LIGHT CONDITION",
+        "incoming_complaints": 11,
+        "distinct_locations": 11,
+        "historical_relationship": "entirely_outside_historical_associations",
+        "complaints_in_anomaly_candidate_groups": 0,
+        "synthetic_data": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "NB-03-009",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.71115523,
+          40.74633369
+        ]
+      },
+      "properties": {
+        "candidate_id": "NB-03-009",
+        "complaint_category": "STREET CONDITION",
+        "incoming_complaints": 10,
+        "distinct_locations": 10,
+        "historical_relationship": "mixed_or_uncertain_historical_associations",
+        "complaints_in_anomaly_candidate_groups": 10,
+        "synthetic_data": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "NB-04-004",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.08785104,
+          40.60754439
+        ]
+      },
+      "properties": {
+        "candidate_id": "NB-04-004",
+        "complaint_category": "STREET LIGHT CONDITION",
+        "incoming_complaints": 9,
+        "distinct_locations": 9,
+        "historical_relationship": "mixed_or_uncertain_historical_associations",
+        "complaints_in_anomaly_candidate_groups": 9,
+        "synthetic_data": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "NB-03-000",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.92556386,
+          40.81977756
+        ]
+      },
+      "properties": {
+        "candidate_id": "NB-03-000",
+        "complaint_category": "STREET CONDITION",
+        "incoming_complaints": 8,
+        "distinct_locations": 8,
+        "historical_relationship": "mixed_or_uncertain_historical_associations",
+        "complaints_in_anomaly_candidate_groups": 8,
+        "synthetic_data": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "NB-03-002",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.92439855,
+          40.83744379
+        ]
+      },
+      "properties": {
+        "candidate_id": "NB-03-002",
+        "complaint_category": "STREET CONDITION",
+        "incoming_complaints": 8,
+        "distinct_locations": 8,
+        "historical_relationship": "entirely_outside_historical_associations",
+        "complaints_in_anomaly_candidate_groups": 8,
+        "synthetic_data": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "NB-04-000",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.91705627,
+          40.8055123
+        ]
+      },
+      "properties": {
+        "candidate_id": "NB-04-000",
+        "complaint_category": "STREET LIGHT CONDITION",
+        "incoming_complaints": 7,
+        "distinct_locations": 7,
+        "historical_relationship": "mixed_or_uncertain_historical_associations",
+        "complaints_in_anomaly_candidate_groups": 7,
+        "synthetic_data": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "NB-03-007",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.7080354,
+          40.73400997
+        ]
+      },
+      "properties": {
+        "candidate_id": "NB-03-007",
+        "complaint_category": "STREET CONDITION",
+        "incoming_complaints": 6,
+        "distinct_locations": 6,
+        "historical_relationship": "entirely_outside_historical_associations",
+        "complaints_in_anomaly_candidate_groups": 0,
+        "synthetic_data": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "NB-00-005",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.16170337,
+          40.62815511
+        ]
+      },
+      "properties": {
+        "candidate_id": "NB-00-005",
+        "complaint_category": "SEWER",
+        "incoming_complaints": 5,
+        "distinct_locations": 5,
+        "historical_relationship": "entirely_outside_historical_associations",
+        "complaints_in_anomaly_candidate_groups": 5,
+        "synthetic_data": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "NB-03-008",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.70897786,
+          40.73281851
+        ]
+      },
+      "properties": {
+        "candidate_id": "NB-03-008",
+        "complaint_category": "STREET CONDITION",
+        "incoming_complaints": 5,
+        "distinct_locations": 5,
+        "historical_relationship": "mixed_or_uncertain_historical_associations",
+        "complaints_in_anomaly_candidate_groups": 0,
+        "synthetic_data": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "NB-04-001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.97351636,
+          40.6974192
+        ]
+      },
+      "properties": {
+        "candidate_id": "NB-04-001",
+        "complaint_category": "STREET LIGHT CONDITION",
+        "incoming_complaints": 5,
+        "distinct_locations": 5,
+        "historical_relationship": "mixed_or_uncertain_historical_associations",
+        "complaints_in_anomaly_candidate_groups": 5,
+        "synthetic_data": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "NB-06-000",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.01921594,
+          40.68879224
+        ]
+      },
+      "properties": {
+        "candidate_id": "NB-06-000",
+        "complaint_category": "TRAFFIC SIGNAL CONDITION",
+        "incoming_complaints": 5,
+        "distinct_locations": 5,
+        "historical_relationship": "entirely_outside_historical_associations",
+        "complaints_in_anomaly_candidate_groups": 0,
+        "synthetic_data": true
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "NB-06-001",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.08960036,
+          40.60663844
+        ]
+      },
+      "properties": {
+        "candidate_id": "NB-06-001",
+        "complaint_category": "TRAFFIC SIGNAL CONDITION",
+        "incoming_complaints": 5,
+        "distinct_locations": 5,
+        "historical_relationship": "mixed_or_uncertain_historical_associations",
+        "complaints_in_anomaly_candidate_groups": 0,
+        "synthetic_data": true
+      }
+    }
+  ]
+}

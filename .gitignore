@@ -1,0 +1,21 @@
+# Python temporary files
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Python environments
+.venv/
+venv/
+env/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+# Streamlit local configuration and secrets
+.streamlit/*
+!.streamlit/config.toml
+
+# Temporary backups
+*.bak
+*.tmp

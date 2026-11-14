@@ -1,0 +1,44 @@
+{
+  "method": "pdf_style_historical_peer_screening_v1",
+  "study_window": [
+    "2023-01-01",
+    "2025-12-31"
+  ],
+  "pdf_focus": [
+    "potential repeated nearby reports",
+    "recorded closure time",
+    "same-category historical K-Means peers"
+  ],
+  "counts": {
+    "source_rows": 685284,
+    "eligible_rows": 668440,
+    "area_category_groups": 2532,
+    "repeat_and_closure_candidates": 3,
+    "repeat_only_candidates": 34,
+    "closure_only_candidates": 72
+  },
+  "thresholds": {
+    "repeat_window_days": 30,
+    "coordinate_decimals": 4,
+    "min_area_category_reports": 30,
+    "min_geolocated_reports": 20,
+    "min_closed_reports": 20,
+    "min_coverage": 0.6,
+    "min_peer_areas": 3,
+    "peer_category_volume_factor": 2.0,
+    "repeat_excess_percentage_points": 15.0,
+    "repeat_peer_ratio": 1.5,
+    "closure_extra_days": 2.0,
+    "closure_peer_ratio": 1.5
+  },
+  "inputs": {
+    "historical_csv_sha256": "8635dd08754013e26d154208225de0eca386564df6a2df127bd500eacd4b0d08",
+    "historical_kmeans_profiles_sha256": "1aa33efaeaa2983556aaa039435b0ce499299a4f5b72e971055d9bf1c81cf434"
+  },
+  "limitations": [
+    "Rounded-coordinate repeated reporting is a proxy, not proof of repeat damage.",
+    "Recorded closure is not verified time to repair.",
+    "Metrics with weak historical/peer support are withheld.",
+    "No statistical significance, current-upload anomaly claim or repair-priority prediction."
+  ]
+}

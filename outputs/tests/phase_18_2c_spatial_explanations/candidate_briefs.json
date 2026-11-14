@@ -1,0 +1,594 @@
+{
+  "synthetic_data": true,
+  "model": "new_batch_same_category_dbscan",
+  "parameters": {
+    "eps_m": 125,
+    "min_samples": 5,
+    "min_report_count": 5,
+    "min_distinct_locations": 2
+  },
+  "limitations": [
+    "Candidates are not confirmed defects.",
+    "Historical association is not proof of onset.",
+    "Representative points are not street addresses.",
+    "The test batch is synthetic.",
+    "Production parameter selection remains pending."
+  ],
+  "candidate_briefs": [
+    {
+      "candidate_id": "NB-00-000",
+      "complaint_category": "SEWER",
+      "incoming_complaints": 15,
+      "distinct_locations": 15,
+      "boroughs": [
+        "BRONX"
+      ],
+      "incident_zip_areas": [
+        "10453"
+      ],
+      "representative_latitude": 40.8530803,
+      "representative_longitude": -73.9134021,
+      "mean_latitude": 40.8526812,
+      "mean_longitude": -73.9130996,
+      "max_distance_from_representative_m": 201.0,
+      "historical_established": 3,
+      "historical_outside": 12,
+      "historical_ambiguous": 0,
+      "historical_unclassified": 0,
+      "historical_relationship": "mixed_or_uncertain_historical_associations",
+      "explanation": "15 incoming SEWER complaints at 15 distinct submitted coordinates form a candidate spatial concentration in this synthetic batch. Historical association results: 3 established, 12 outside, 0 ambiguous, 0 other. The representative map point (40.853080, -73.913402) is a submitted complaint coordinate, not a confirmed defect location.",
+      "suggested_review": "Review sewer complaint descriptions, location accuracy and relevant maintenance history. Check for duplicate reports and confirm the situation before considering a field investigation.",
+      "synthetic_data": true
+    },
+    {
+      "candidate_id": "NB-00-003",
+      "complaint_category": "SEWER",
+      "incoming_complaints": 15,
+      "distinct_locations": 15,
+      "boroughs": [
+        "MANHATTAN"
+      ],
+      "incident_zip_areas": [
+        "10003"
+      ],
+      "representative_latitude": 40.7311036,
+      "representative_longitude": -73.9913634,
+      "mean_latitude": 40.7315251,
+      "mean_longitude": -73.9909983,
+      "max_distance_from_representative_m": 192.3,
+      "historical_established": 14,
+      "historical_outside": 0,
+      "historical_ambiguous": 1,
+      "historical_unclassified": 0,
+      "historical_relationship": "mixed_or_uncertain_historical_associations",
+      "explanation": "15 incoming SEWER complaints at 15 distinct submitted coordinates form a candidate spatial concentration in this synthetic batch. Historical association results: 14 established, 0 outside, 1 ambiguous, 0 other. The representative map point (40.731104, -73.991363) is a submitted complaint coordinate, not a confirmed defect location.",
+      "suggested_review": "Review sewer complaint descriptions, location accuracy and relevant maintenance history. Check for duplicate reports and confirm the situation before considering a field investigation.",
+      "synthetic_data": true
+    },
+    {
+      "candidate_id": "NB-00-004",
+      "complaint_category": "SEWER",
+      "incoming_complaints": 15,
+      "distinct_locations": 15,
+      "boroughs": [
+        "QUEENS"
+      ],
+      "incident_zip_areas": [
+        "11005"
+      ],
+      "representative_latitude": 40.7558204,
+      "representative_longitude": -73.7138061,
+      "mean_latitude": 40.7561,
+      "mean_longitude": -73.7140452,
+      "max_distance_from_representative_m": 175.8,
+      "historical_established": 0,
+      "historical_outside": 15,
+      "historical_ambiguous": 0,
+      "historical_unclassified": 0,
+      "historical_relationship": "entirely_outside_historical_clusters",
+      "explanation": "15 incoming SEWER complaints at 15 distinct submitted coordinates form a candidate spatial concentration in this synthetic batch. All incoming reports are outside the saved historical cluster associations. The representative map point (40.755820, -73.713806) is a submitted complaint coordinate, not a confirmed defect location.",
+      "suggested_review": "Review sewer complaint descriptions, location accuracy and relevant maintenance history. Check for duplicate reports and confirm the situation before considering a field investigation.",
+      "synthetic_data": true
+    },
+    {
+      "candidate_id": "NB-03-010",
+      "complaint_category": "STREET CONDITION",
+      "incoming_complaints": 14,
+      "distinct_locations": 14,
+      "boroughs": [
+        "STATEN ISLAND"
+      ],
+      "incident_zip_areas": [
+        "10301"
+      ],
+      "representative_latitude": 40.6247795,
+      "representative_longitude": -74.0962072,
+      "mean_latitude": 40.6248423,
+      "mean_longitude": -74.0959543,
+      "max_distance_from_representative_m": 178.4,
+      "historical_established": 0,
+      "historical_outside": 14,
+      "historical_ambiguous": 0,
+      "historical_unclassified": 0,
+      "historical_relationship": "entirely_outside_historical_clusters",
+      "explanation": "14 incoming STREET CONDITION complaints at 14 distinct submitted coordinates form a candidate spatial concentration in this synthetic batch. All incoming reports are outside the saved historical cluster associations. The representative map point (40.624779, -74.096207) is a submitted complaint coordinate, not a confirmed defect location.",
+      "suggested_review": "Review street-condition descriptions to determine whether reports concern the same roadway issue. Check for duplicate reports and confirm the situation before considering a field investigation.",
+      "synthetic_data": true
+    },
+    {
+      "candidate_id": "NB-03-004",
+      "complaint_category": "STREET CONDITION",
+      "incoming_complaints": 13,
+      "distinct_locations": 13,
+      "boroughs": [
+        "BROOKLYN"
+      ],
+      "incident_zip_areas": [
+        "11203"
+      ],
+      "representative_latitude": 40.6496266,
+      "representative_longitude": -73.9341535,
+      "mean_latitude": 40.6496761,
+      "mean_longitude": -73.9337407,
+      "max_distance_from_representative_m": 217.1,
+      "historical_established": 0,
+      "historical_outside": 13,
+      "historical_ambiguous": 0,
+      "historical_unclassified": 0,
+      "historical_relationship": "entirely_outside_historical_clusters",
+      "explanation": "13 incoming STREET CONDITION complaints at 13 distinct submitted coordinates form a candidate spatial concentration in this synthetic batch. All incoming reports are outside the saved historical cluster associations. The representative map point (40.649627, -73.934154) is a submitted complaint coordinate, not a confirmed defect location.",
+      "suggested_review": "Review street-condition descriptions to determine whether reports concern the same roadway issue. Check for duplicate reports and confirm the situation before considering a field investigation.",
+      "synthetic_data": true
+    },
+    {
+      "candidate_id": "NB-03-005",
+      "complaint_category": "STREET CONDITION",
+      "incoming_complaints": 13,
+      "distinct_locations": 13,
+      "boroughs": [
+        "MANHATTAN"
+      ],
+      "incident_zip_areas": [
+        "10001"
+      ],
+      "representative_latitude": 40.7519771,
+      "representative_longitude": -74.0044709,
+      "mean_latitude": 40.7518158,
+      "mean_longitude": -74.0048897,
+      "max_distance_from_representative_m": 182.2,
+      "historical_established": 3,
+      "historical_outside": 10,
+      "historical_ambiguous": 0,
+      "historical_unclassified": 0,
+      "historical_relationship": "mixed_or_uncertain_historical_associations",
+      "explanation": "13 incoming STREET CONDITION complaints at 13 distinct submitted coordinates form a candidate spatial concentration in this synthetic batch. Historical association results: 3 established, 10 outside, 0 ambiguous, 0 other. The representative map point (40.751977, -74.004471) is a submitted complaint coordinate, not a confirmed defect location.",
+      "suggested_review": "Review street-condition descriptions to determine whether reports concern the same roadway issue. Check for duplicate reports and confirm the situation before considering a field investigation.",
+      "synthetic_data": true
+    },
+    {
+      "candidate_id": "NB-03-006",
+      "complaint_category": "STREET CONDITION",
+      "incoming_complaints": 13,
+      "distinct_locations": 13,
+      "boroughs": [
+        "MANHATTAN"
+      ],
+      "incident_zip_areas": [
+        "10002"
+      ],
+      "representative_latitude": 40.7173782,
+      "representative_longitude": -73.9850585,
+      "mean_latitude": 40.7171774,
+      "mean_longitude": -73.9855182,
+      "max_distance_from_representative_m": 208.3,
+      "historical_established": 13,
+      "historical_outside": 0,
+      "historical_ambiguous": 0,
+      "historical_unclassified": 0,
+      "historical_relationship": "entirely_associated_with_historical_clusters",
+      "explanation": "13 incoming STREET CONDITION complaints at 13 distinct submitted coordinates form a candidate spatial concentration in this synthetic batch. All incoming reports are associated with established historical clusters. The representative map point (40.717378, -73.985058) is a submitted complaint coordinate, not a confirmed defect location.",
+      "suggested_review": "Review street-condition descriptions to determine whether reports concern the same roadway issue. Check for duplicate reports and confirm the situation before considering a field investigation.",
+      "synthetic_data": true
+    },
+    {
+      "candidate_id": "NB-03-003",
+      "complaint_category": "STREET CONDITION",
+      "incoming_complaints": 12,
+      "distinct_locations": 12,
+      "boroughs": [
+        "BROOKLYN"
+      ],
+      "incident_zip_areas": [
+        "11201"
+      ],
+      "representative_latitude": 40.693562,
+      "representative_longitude": -73.9896588,
+      "mean_latitude": 40.6938967,
+      "mean_longitude": -73.989946,
+      "max_distance_from_representative_m": 180.5,
+      "historical_established": 10,
+      "historical_outside": 2,
+      "historical_ambiguous": 0,
+      "historical_unclassified": 0,
+      "historical_relationship": "mixed_or_uncertain_historical_associations",
+      "explanation": "12 incoming STREET CONDITION complaints at 12 distinct submitted coordinates form a candidate spatial concentration in this synthetic batch. Historical association results: 10 established, 2 outside, 0 ambiguous, 0 other. The representative map point (40.693562, -73.989659) is a submitted complaint coordinate, not a confirmed defect location.",
+      "suggested_review": "Review street-condition descriptions to determine whether reports concern the same roadway issue. Check for duplicate reports and confirm the situation before considering a field investigation.",
+      "synthetic_data": true
+    },
+    {
+      "candidate_id": "NB-04-002",
+      "complaint_category": "STREET LIGHT CONDITION",
+      "incoming_complaints": 12,
+      "distinct_locations": 12,
+      "boroughs": [
+        "MANHATTAN"
+      ],
+      "incident_zip_areas": [
+        "10004"
+      ],
+      "representative_latitude": 40.6887559,
+      "representative_longitude": -74.016905,
+      "mean_latitude": 40.6885069,
+      "mean_longitude": -74.0177789,
+      "max_distance_from_representative_m": 223.2,
+      "historical_established": 0,
+      "historical_outside": 12,
+      "historical_ambiguous": 0,
+      "historical_unclassified": 0,
+      "historical_relationship": "entirely_outside_historical_clusters",
+      "explanation": "12 incoming STREET LIGHT CONDITION complaints at 12 distinct submitted coordinates form a candidate spatial concentration in this synthetic batch. All incoming reports are outside the saved historical cluster associations. The representative map point (40.688756, -74.016905) is a submitted complaint coordinate, not a confirmed defect location.",
+      "suggested_review": "Review lighting complaints and check whether reports refer to the same lighting assets or nearby locations. Check for duplicate reports and confirm the situation before considering a field investigation.",
+      "synthetic_data": true
+    },
+    {
+      "candidate_id": "NB-00-001",
+      "complaint_category": "SEWER",
+      "incoming_complaints": 11,
+      "distinct_locations": 11,
+      "boroughs": [
+        "BROOKLYN"
+      ],
+      "incident_zip_areas": [
+        "11204"
+      ],
+      "representative_latitude": 40.6209241,
+      "representative_longitude": -73.9852412,
+      "mean_latitude": 40.6208356,
+      "mean_longitude": -73.9855681,
+      "max_distance_from_representative_m": 212.9,
+      "historical_established": 3,
+      "historical_outside": 5,
+      "historical_ambiguous": 3,
+      "historical_unclassified": 0,
+      "historical_relationship": "mixed_or_uncertain_historical_associations",
+      "explanation": "11 incoming SEWER complaints at 11 distinct submitted coordinates form a candidate spatial concentration in this synthetic batch. Historical association results: 3 established, 5 outside, 3 ambiguous, 0 other. The representative map point (40.620924, -73.985241) is a submitted complaint coordinate, not a confirmed defect location.",
+      "suggested_review": "Review sewer complaint descriptions, location accuracy and relevant maintenance history. Check for duplicate reports and confirm the situation before considering a field investigation.",
+      "synthetic_data": true
+    },
+    {
+      "candidate_id": "NB-03-011",
+      "complaint_category": "STREET CONDITION",
+      "incoming_complaints": 11,
+      "distinct_locations": 11,
+      "boroughs": [
+        "STATEN ISLAND"
+      ],
+      "incident_zip_areas": [
+        "10302"
+      ],
+      "representative_latitude": 40.6294302,
+      "representative_longitude": -74.1365786,
+      "mean_latitude": 40.629499,
+      "mean_longitude": -74.1369454,
+      "max_distance_from_representative_m": 208.4,
+      "historical_established": 0,
+      "historical_outside": 11,
+      "historical_ambiguous": 0,
+      "historical_unclassified": 0,
+      "historical_relationship": "entirely_outside_historical_clusters",
+      "explanation": "11 incoming STREET CONDITION complaints at 11 distinct submitted coordinates form a candidate spatial concentration in this synthetic batch. All incoming reports are outside the saved historical cluster associations. The representative map point (40.629430, -74.136579) is a submitted complaint coordinate, not a confirmed defect location.",
+      "suggested_review": "Review street-condition descriptions to determine whether reports concern the same roadway issue. Check for duplicate reports and confirm the situation before considering a field investigation.",
+      "synthetic_data": true
+    },
+    {
+      "candidate_id": "NB-04-003",
+      "complaint_category": "STREET LIGHT CONDITION",
+      "incoming_complaints": 11,
+      "distinct_locations": 11,
+      "boroughs": [
+        "QUEENS"
+      ],
+      "incident_zip_areas": [
+        "11040"
+      ],
+      "representative_latitude": 40.7472686,
+      "representative_longitude": -73.7025083,
+      "mean_latitude": 40.7472152,
+      "mean_longitude": -73.702296,
+      "max_distance_from_representative_m": 200.9,
+      "historical_established": 0,
+      "historical_outside": 11,
+      "historical_ambiguous": 0,
+      "historical_unclassified": 0,
+      "historical_relationship": "entirely_outside_historical_clusters",
+      "explanation": "11 incoming STREET LIGHT CONDITION complaints at 11 distinct submitted coordinates form a candidate spatial concentration in this synthetic batch. All incoming reports are outside the saved historical cluster associations. The representative map point (40.747269, -73.702508) is a submitted complaint coordinate, not a confirmed defect location.",
+      "suggested_review": "Review lighting complaints and check whether reports refer to the same lighting assets or nearby locations. Check for duplicate reports and confirm the situation before considering a field investigation.",
+      "synthetic_data": true
+    },
+    {
+      "candidate_id": "NB-03-009",
+      "complaint_category": "STREET CONDITION",
+      "incoming_complaints": 10,
+      "distinct_locations": 10,
+      "boroughs": [
+        "QUEENS"
+      ],
+      "incident_zip_areas": [
+        "11004"
+      ],
+      "representative_latitude": 40.7463337,
+      "representative_longitude": -73.7111552,
+      "mean_latitude": 40.7458491,
+      "mean_longitude": -73.7108532,
+      "max_distance_from_representative_m": 183.2,
+      "historical_established": 2,
+      "historical_outside": 8,
+      "historical_ambiguous": 0,
+      "historical_unclassified": 0,
+      "historical_relationship": "mixed_or_uncertain_historical_associations",
+      "explanation": "10 incoming STREET CONDITION complaints at 10 distinct submitted coordinates form a candidate spatial concentration in this synthetic batch. Historical association results: 2 established, 8 outside, 0 ambiguous, 0 other. The representative map point (40.746334, -73.711155) is a submitted complaint coordinate, not a confirmed defect location.",
+      "suggested_review": "Review street-condition descriptions to determine whether reports concern the same roadway issue. Check for duplicate reports and confirm the situation before considering a field investigation.",
+      "synthetic_data": true
+    },
+    {
+      "candidate_id": "NB-04-004",
+      "complaint_category": "STREET LIGHT CONDITION",
+      "incoming_complaints": 9,
+      "distinct_locations": 9,
+      "boroughs": [
+        "STATEN ISLAND"
+      ],
+      "incident_zip_areas": [
+        "10304"
+      ],
+      "representative_latitude": 40.6075444,
+      "representative_longitude": -74.087851,
+      "mean_latitude": 40.6075107,
+      "mean_longitude": -74.0877667,
+      "max_distance_from_representative_m": 137.4,
+      "historical_established": 3,
+      "historical_outside": 6,
+      "historical_ambiguous": 0,
+      "historical_unclassified": 0,
+      "historical_relationship": "mixed_or_uncertain_historical_associations",
+      "explanation": "9 incoming STREET LIGHT CONDITION complaints at 9 distinct submitted coordinates form a candidate spatial concentration in this synthetic batch. Historical association results: 3 established, 6 outside, 0 ambiguous, 0 other. The representative map point (40.607544, -74.087851) is a submitted complaint coordinate, not a confirmed defect location.",
+      "suggested_review": "Review lighting complaints and check whether reports refer to the same lighting assets or nearby locations. Check for duplicate reports and confirm the situation before considering a field investigation.",
+      "synthetic_data": true
+    },
+    {
+      "candidate_id": "NB-03-000",
+      "complaint_category": "STREET CONDITION",
+      "incoming_complaints": 8,
+      "distinct_locations": 8,
+      "boroughs": [
+        "BRONX"
+      ],
+      "incident_zip_areas": [
+        "10451"
+      ],
+      "representative_latitude": 40.8197776,
+      "representative_longitude": -73.9255639,
+      "mean_latitude": 40.8198878,
+      "mean_longitude": -73.9261566,
+      "max_distance_from_representative_m": 185.9,
+      "historical_established": 4,
+      "historical_outside": 4,
+      "historical_ambiguous": 0,
+      "historical_unclassified": 0,
+      "historical_relationship": "mixed_or_uncertain_historical_associations",
+      "explanation": "8 incoming STREET CONDITION complaints at 8 distinct submitted coordinates form a candidate spatial concentration in this synthetic batch. Historical association results: 4 established, 4 outside, 0 ambiguous, 0 other. The representative map point (40.819778, -73.925564) is a submitted complaint coordinate, not a confirmed defect location.",
+      "suggested_review": "Review street-condition descriptions to determine whether reports concern the same roadway issue. Check for duplicate reports and confirm the situation before considering a field investigation.",
+      "synthetic_data": true
+    },
+    {
+      "candidate_id": "NB-03-002",
+      "complaint_category": "STREET CONDITION",
+      "incoming_complaints": 8,
+      "distinct_locations": 8,
+      "boroughs": [
+        "BRONX"
+      ],
+      "incident_zip_areas": [
+        "10452"
+      ],
+      "representative_latitude": 40.8374438,
+      "representative_longitude": -73.9243986,
+      "mean_latitude": 40.8375013,
+      "mean_longitude": -73.9242187,
+      "max_distance_from_representative_m": 165.8,
+      "historical_established": 0,
+      "historical_outside": 8,
+      "historical_ambiguous": 0,
+      "historical_unclassified": 0,
+      "historical_relationship": "entirely_outside_historical_clusters",
+      "explanation": "8 incoming STREET CONDITION complaints at 8 distinct submitted coordinates form a candidate spatial concentration in this synthetic batch. All incoming reports are outside the saved historical cluster associations. The representative map point (40.837444, -73.924399) is a submitted complaint coordinate, not a confirmed defect location.",
+      "suggested_review": "Review street-condition descriptions to determine whether reports concern the same roadway issue. Check for duplicate reports and confirm the situation before considering a field investigation.",
+      "synthetic_data": true
+    },
+    {
+      "candidate_id": "NB-04-000",
+      "complaint_category": "STREET LIGHT CONDITION",
+      "incoming_complaints": 7,
+      "distinct_locations": 7,
+      "boroughs": [
+        "BRONX"
+      ],
+      "incident_zip_areas": [
+        "10454"
+      ],
+      "representative_latitude": 40.8055123,
+      "representative_longitude": -73.9170563,
+      "mean_latitude": 40.8057525,
+      "mean_longitude": -73.9169673,
+      "max_distance_from_representative_m": 117.4,
+      "historical_established": 2,
+      "historical_outside": 5,
+      "historical_ambiguous": 0,
+      "historical_unclassified": 0,
+      "historical_relationship": "mixed_or_uncertain_historical_associations",
+      "explanation": "7 incoming STREET LIGHT CONDITION complaints at 7 distinct submitted coordinates form a candidate spatial concentration in this synthetic batch. Historical association results: 2 established, 5 outside, 0 ambiguous, 0 other. The representative map point (40.805512, -73.917056) is a submitted complaint coordinate, not a confirmed defect location.",
+      "suggested_review": "Review lighting complaints and check whether reports refer to the same lighting assets or nearby locations. Check for duplicate reports and confirm the situation before considering a field investigation.",
+      "synthetic_data": true
+    },
+    {
+      "candidate_id": "NB-03-007",
+      "complaint_category": "STREET CONDITION",
+      "incoming_complaints": 6,
+      "distinct_locations": 6,
+      "boroughs": [
+        "QUEENS"
+      ],
+      "incident_zip_areas": [
+        "11001"
+      ],
+      "representative_latitude": 40.73401,
+      "representative_longitude": -73.7080354,
+      "mean_latitude": 40.7340067,
+      "mean_longitude": -73.7078579,
+      "max_distance_from_representative_m": 65.4,
+      "historical_established": 0,
+      "historical_outside": 6,
+      "historical_ambiguous": 0,
+      "historical_unclassified": 0,
+      "historical_relationship": "entirely_outside_historical_clusters",
+      "explanation": "6 incoming STREET CONDITION complaints at 6 distinct submitted coordinates form a candidate spatial concentration in this synthetic batch. All incoming reports are outside the saved historical cluster associations. The representative map point (40.734010, -73.708035) is a submitted complaint coordinate, not a confirmed defect location.",
+      "suggested_review": "Review street-condition descriptions to determine whether reports concern the same roadway issue. Check for duplicate reports and confirm the situation before considering a field investigation.",
+      "synthetic_data": true
+    },
+    {
+      "candidate_id": "NB-00-005",
+      "complaint_category": "SEWER",
+      "incoming_complaints": 5,
+      "distinct_locations": 5,
+      "boroughs": [
+        "STATEN ISLAND"
+      ],
+      "incident_zip_areas": [
+        "10303"
+      ],
+      "representative_latitude": 40.6281551,
+      "representative_longitude": -74.1617034,
+      "mean_latitude": 40.6282077,
+      "mean_longitude": -74.1620069,
+      "max_distance_from_representative_m": 112.7,
+      "historical_established": 0,
+      "historical_outside": 5,
+      "historical_ambiguous": 0,
+      "historical_unclassified": 0,
+      "historical_relationship": "entirely_outside_historical_clusters",
+      "explanation": "5 incoming SEWER complaints at 5 distinct submitted coordinates form a candidate spatial concentration in this synthetic batch. All incoming reports are outside the saved historical cluster associations. The representative map point (40.628155, -74.161703) is a submitted complaint coordinate, not a confirmed defect location.",
+      "suggested_review": "Review sewer complaint descriptions, location accuracy and relevant maintenance history. Check for duplicate reports and confirm the situation before considering a field investigation.",
+      "synthetic_data": true
+    },
+    {
+      "candidate_id": "NB-03-008",
+      "complaint_category": "STREET CONDITION",
+      "incoming_complaints": 5,
+      "distinct_locations": 5,
+      "boroughs": [
+        "QUEENS"
+      ],
+      "incident_zip_areas": [
+        "11001"
+      ],
+      "representative_latitude": 40.7328185,
+      "representative_longitude": -73.7089779,
+      "mean_latitude": 40.7325534,
+      "mean_longitude": -73.7090616,
+      "max_distance_from_representative_m": 114.0,
+      "historical_established": 1,
+      "historical_outside": 4,
+      "historical_ambiguous": 0,
+      "historical_unclassified": 0,
+      "historical_relationship": "mixed_or_uncertain_historical_associations",
+      "explanation": "5 incoming STREET CONDITION complaints at 5 distinct submitted coordinates form a candidate spatial concentration in this synthetic batch. Historical association results: 1 established, 4 outside, 0 ambiguous, 0 other. The representative map point (40.732819, -73.708978) is a submitted complaint coordinate, not a confirmed defect location.",
+      "suggested_review": "Review street-condition descriptions to determine whether reports concern the same roadway issue. Check for duplicate reports and confirm the situation before considering a field investigation.",
+      "synthetic_data": true
+    },
+    {
+      "candidate_id": "NB-04-001",
+      "complaint_category": "STREET LIGHT CONDITION",
+      "incoming_complaints": 5,
+      "distinct_locations": 5,
+      "boroughs": [
+        "BROOKLYN"
+      ],
+      "incident_zip_areas": [
+        "11205"
+      ],
+      "representative_latitude": 40.6974192,
+      "representative_longitude": -73.9735164,
+      "mean_latitude": 40.697218,
+      "mean_longitude": -73.9735685,
+      "max_distance_from_representative_m": 70.2,
+      "historical_established": 1,
+      "historical_outside": 4,
+      "historical_ambiguous": 0,
+      "historical_unclassified": 0,
+      "historical_relationship": "mixed_or_uncertain_historical_associations",
+      "explanation": "5 incoming STREET LIGHT CONDITION complaints at 5 distinct submitted coordinates form a candidate spatial concentration in this synthetic batch. Historical association results: 1 established, 4 outside, 0 ambiguous, 0 other. The representative map point (40.697419, -73.973516) is a submitted complaint coordinate, not a confirmed defect location.",
+      "suggested_review": "Review lighting complaints and check whether reports refer to the same lighting assets or nearby locations. Check for duplicate reports and confirm the situation before considering a field investigation.",
+      "synthetic_data": true
+    },
+    {
+      "candidate_id": "NB-06-000",
+      "complaint_category": "TRAFFIC SIGNAL CONDITION",
+      "incoming_complaints": 5,
+      "distinct_locations": 5,
+      "boroughs": [
+        "MANHATTAN"
+      ],
+      "incident_zip_areas": [
+        "10004"
+      ],
+      "representative_latitude": 40.6887922,
+      "representative_longitude": -74.0192159,
+      "mean_latitude": 40.6887332,
+      "mean_longitude": -74.0189918,
+      "max_distance_from_representative_m": 117.0,
+      "historical_established": 0,
+      "historical_outside": 5,
+      "historical_ambiguous": 0,
+      "historical_unclassified": 0,
+      "historical_relationship": "entirely_outside_historical_clusters",
+      "explanation": "5 incoming TRAFFIC SIGNAL CONDITION complaints at 5 distinct submitted coordinates form a candidate spatial concentration in this synthetic batch. All incoming reports are outside the saved historical cluster associations. The representative map point (40.688792, -74.019216) is a submitted complaint coordinate, not a confirmed defect location.",
+      "suggested_review": "Review traffic-signal complaints and verify the reported intersections and equipment. Check for duplicate reports and confirm the situation before considering a field investigation.",
+      "synthetic_data": true
+    },
+    {
+      "candidate_id": "NB-06-001",
+      "complaint_category": "TRAFFIC SIGNAL CONDITION",
+      "incoming_complaints": 5,
+      "distinct_locations": 5,
+      "boroughs": [
+        "STATEN ISLAND"
+      ],
+      "incident_zip_areas": [
+        "10304"
+      ],
+      "representative_latitude": 40.6066384,
+      "representative_longitude": -74.0896004,
+      "mean_latitude": 40.6068852,
+      "mean_longitude": -74.089351,
+      "max_distance_from_representative_m": 106.0,
+      "historical_established": 3,
+      "historical_outside": 2,
+      "historical_ambiguous": 0,
+      "historical_unclassified": 0,
+      "historical_relationship": "mixed_or_uncertain_historical_associations",
+      "explanation": "5 incoming TRAFFIC SIGNAL CONDITION complaints at 5 distinct submitted coordinates form a candidate spatial concentration in this synthetic batch. Historical association results: 3 established, 2 outside, 0 ambiguous, 0 other. The representative map point (40.606638, -74.089600) is a submitted complaint coordinate, not a confirmed defect location.",
+      "suggested_review": "Review traffic-signal complaints and verify the reported intersections and equipment. Check for duplicate reports and confirm the situation before considering a field investigation.",
+      "synthetic_data": true
+    }
+  ]
+}

@@ -1,8 +1,3 @@
-day_name,complaint_count,percentage
-Monday,16710,16.71
-Tuesday,17375,17.38
-Wednesday,17140,17.14
-Thursday,16575,16.58
-Friday,15454,15.45
-Saturday,8425,8.43
-Sunday,8321,8.32
+version https://git-lfs.github.com/spec/v1
+oid sha256:43280b24129940128175a31b790008ef9eb264c63c48bc2ebcbed48c7f7acaa3
+size 187

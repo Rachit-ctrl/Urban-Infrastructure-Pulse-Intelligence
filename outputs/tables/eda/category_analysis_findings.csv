@@ -1,2 +1,3 @@
-total_records,total_categories,highest_category,highest_category_count,lowest_category,lowest_category_count,top_3_contribution_pct,top_5_contribution_pct
-100000,15,Street Condition,30006,Water Drainage,20,63.4,86.17
+version https://git-lfs.github.com/spec/v1
+oid sha256:956f07c8cf3c0de71a95119bd69c391764a71012c4ba1ccbaf2fbf3efd69f2a5
+size 222

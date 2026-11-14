@@ -1,0 +1,36 @@
+{
+  "project": "Urban Infrastructure Pulse Intelligence",
+  "model": "KMeans",
+  "representation": "Baseline PCA90",
+  "k": 3,
+  "model_role": "primary_descriptive",
+  "training_period": "2023-2025",
+  "training_areas": 238,
+  "model_features": 19,
+  "pca_components": 2,
+  "pca_variance_retained_pct": 90.1424,
+  "cluster_sizes": {
+    "0": 175,
+    "1": 43,
+    "2": 20
+  },
+  "verification": {
+    "preprocessing_reproduction": "PASSED",
+    "pca_reproduction": "PASSED",
+    "saved_kmeans_reproduction": "PASSED",
+    "profile_csv_agreement": "238/238",
+    "deployment_bundle_reproduction": "PASSED",
+    "predictor_integration": "PASSED",
+    "input_validation_tests": "6/6",
+    "batch_prediction_stability": "PASSED",
+    "row_order_stability": "PASSED"
+  },
+  "artifact": "models/deployment/baseline_pca90_k3_pipeline_v1.joblib",
+  "limitations": [
+    "Reporting profiles are not physical infrastructure risk scores.",
+    "Unseen-area and future-period validation remains pending.",
+    "Low-support and geographic-review flags require caution.",
+    "K=3 is selected for descriptive interpretability; K=2 has stronger overall clustering separation."
+  ],
+  "verified_at_utc": "2026-11-07T12:55:05.828686+00:00"
+}

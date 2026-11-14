@@ -1,0 +1,8 @@
+# Place at: <project root>/.streamlit/config.toml
+# Makes Streamlit's native widgets (date picker, tables, tabs, expanders) match the dark theme.
+[theme]
+base = "dark"
+primaryColor = "#32dac5"
+backgroundColor = "#081420"
+secondaryBackgroundColor = "#102a3a"
+textColor = "#eaf4f8"

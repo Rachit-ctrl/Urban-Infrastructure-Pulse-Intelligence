@@ -1,0 +1,140 @@
+{
+  "snapshot_version": 1,
+  "source_path": "data/processed/nyc311_infrastructure_cleaned.csv",
+  "source_sha256": "8635dd08754013e26d154208225de0eca386564df6a2df127bd500eacd4b0d08",
+  "historical_start": "2023-01-01",
+  "historical_end": "2025-12-31",
+  "calendar_days": 1096,
+  "source_rows": 685284,
+  "eligible_rows": 668440,
+  "area_count": 238,
+  "category_count": 15,
+  "sparse_daily_entries": 394687,
+  "schema": [
+    "area_id",
+    "complaint_category",
+    "historical_day",
+    "complaint_count"
+  ],
+  "zero_count_policy": "Missing area-category-day keys represent zero observed ELIGIBLE complaint records within the defined historical calendar. They do not prove zero actual complaints or complete geographic coverage. Sparse-history safeguards must be applied before anomaly screening.",
+  "date_policy": "Source date prefixes interpreted as NYC-local calendar dates; timezone-offset timestamps are not accepted by this snapshot builder.",
+  "area_policy": "Borough and five-digit ZIP syntax validated; not a point-in-polygon geographic verification.",
+  "intended_use": "Exploratory area-category anomaly screening; not confirmed anomalies or repair priorities.",
+  "category_count_semantics": "taxonomy_supported_categories",
+  "supported_category_count": 15,
+  "observed_eligible_category_count": 14,
+  "supported_categories": [
+    "BRIDGE CONDITION",
+    "CURB CONDITION",
+    "ROOT/SEWER/SIDEWALK CONDITION",
+    "SEWER",
+    "SEWER MAINTENANCE",
+    "SIDEWALK CONDITION",
+    "STREET CONDITION",
+    "STREET LIGHT CONDITION",
+    "STREET SIGN - DAMAGED",
+    "STREET SIGN - DANGLING",
+    "STREET SIGN - MISSING",
+    "TRAFFIC SIGNAL CONDITION",
+    "WATER DRAINAGE",
+    "WATER LEAK",
+    "WATER MAINTENANCE"
+  ],
+  "observed_eligible_categories": [
+    "CURB CONDITION",
+    "ROOT/SEWER/SIDEWALK CONDITION",
+    "SEWER",
+    "SEWER MAINTENANCE",
+    "SIDEWALK CONDITION",
+    "STREET CONDITION",
+    "STREET LIGHT CONDITION",
+    "STREET SIGN - DAMAGED",
+    "STREET SIGN - DANGLING",
+    "STREET SIGN - MISSING",
+    "TRAFFIC SIGNAL CONDITION",
+    "WATER DRAINAGE",
+    "WATER LEAK",
+    "WATER MAINTENANCE"
+  ],
+  "categories_without_eligible_area_records": [
+    "BRIDGE CONDITION"
+  ],
+  "category_coverage": [
+    {
+      "complaint_category": "BRIDGE CONDITION",
+      "eligible_area_reports": 0,
+      "coverage_status": "no_eligible_area_records"
+    },
+    {
+      "complaint_category": "CURB CONDITION",
+      "eligible_area_reports": 21219,
+      "coverage_status": "represented"
+    },
+    {
+      "complaint_category": "ROOT/SEWER/SIDEWALK CONDITION",
+      "eligible_area_reports": 30158,
+      "coverage_status": "represented"
+    },
+    {
+      "complaint_category": "SEWER",
+      "eligible_area_reports": 82014,
+      "coverage_status": "represented"
+    },
+    {
+      "complaint_category": "SEWER MAINTENANCE",
+      "eligible_area_reports": 2916,
+      "coverage_status": "represented"
+    },
+    {
+      "complaint_category": "SIDEWALK CONDITION",
+      "eligible_area_reports": 73727,
+      "coverage_status": "represented"
+    },
+    {
+      "complaint_category": "STREET CONDITION",
+      "eligible_area_reports": 203247,
+      "coverage_status": "represented"
+    },
+    {
+      "complaint_category": "STREET LIGHT CONDITION",
+      "eligible_area_reports": 94850,
+      "coverage_status": "represented"
+    },
+    {
+      "complaint_category": "STREET SIGN - DAMAGED",
+      "eligible_area_reports": 14964,
+      "coverage_status": "represented"
+    },
+    {
+      "complaint_category": "STREET SIGN - DANGLING",
+      "eligible_area_reports": 10579,
+      "coverage_status": "represented"
+    },
+    {
+      "complaint_category": "STREET SIGN - MISSING",
+      "eligible_area_reports": 10399,
+      "coverage_status": "represented"
+    },
+    {
+      "complaint_category": "TRAFFIC SIGNAL CONDITION",
+      "eligible_area_reports": 120638,
+      "coverage_status": "represented"
+    },
+    {
+      "complaint_category": "WATER DRAINAGE",
+      "eligible_area_reports": 136,
+      "coverage_status": "represented"
+    },
+    {
+      "complaint_category": "WATER LEAK",
+      "eligible_area_reports": 3060,
+      "coverage_status": "represented"
+    },
+    {
+      "complaint_category": "WATER MAINTENANCE",
+      "eligible_area_reports": 533,
+      "coverage_status": "represented"
+    }
+  ],
+  "category_coverage_limitation": "The taxonomy supports 15 categories, but not every category has historical records passing borough-ZIP eligibility filtering. Do not manufacture zero-count complaint rows or classify absent categories as confirmed unusual increases."
+}

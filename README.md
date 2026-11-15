@@ -12,7 +12,7 @@ The system helps answer three practical questions:
 
 It is designed to **support human investigation**, not to verify infrastructure defects, predict emergencies, or automatically decide which repairs should be performed.
 
-**Project repository:** [Drashti2308/urban_intelligent — `audit-cleanup` branch](https://github.com/Drashti2308/urban_intelligent/tree/audit-cleanup)
+**Deployed dashboard** https://urban-infrastructure-pulse-intelligence-zpgvzudmumwq4rq8hynzrs.streamlit.app/
 
 ---
 
